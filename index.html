@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
+  <title>Happy Birthday Mom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
     body {
-        
       font-family: Arial, sans-serif;
       text-align: center;
       background: pink;
       color: darkred;
+      margin: 0;
+      padding: 0;
     }
     h1 {
-      margin-top: 50px;
+      margin-top: 15vh;   /* centers nicely on mobile */
+      font-size: 8vw;     /* scales with screen width */
+    }
+    p {
+      font-size: 5vw;     /* scales with screen width */
+      margin: 20px 0;
     }
     button {
       padding: 12px 25px;
-      font-size: 16px;
+      font-size: 5vw;     /* scales with screen width */
       background: darkred;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
+      max-width: 300px;
+      width: 80%;         /* fills most of screen width */
     }
     button:hover {
       background: crimson;
@@ -27,7 +37,7 @@
   </style>
 </head>
 <body>
-  
+
   <p>🎉Click the button to see your surprise!🎉</p>
   <button onclick="window.location.href='celebration.html'">Click Me</button>
 </body>
