@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Celebration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: pink;
+      color: darkred;
+      overflow-x: hidden;
+    }
+    /* Balloon styling */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      animation: rise 6s linear forwards;
+    }
+    @keyframes rise {
+      0% { bottom: -150px; opacity: 0; }
+      20% { opacity: 1; }
+      100% { bottom: 100%; opacity: 0; }
+    }
+    #message {
+      display: none;
+      font-size: 26px;
+      font-weight: bold;
+      color: purple;
+      margin-top: 20px;
+    }
+    #card {
+      display: none;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 250px;
+      min-height: 200px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>
+
+  <div id="message">🎉 Happy birthday Beautiful 🎉</div>
+
+  <div id="card">
+    💖 Dear Mom, wishing you endless joy and love today! 💖
+  </div>
+
+<script>
+    window.onload = function() {
+      // Continuously spawn balloons every 500ms
+      setInterval(()=>{
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+
+        // Randomize color
+        const colors = ["#ff6666","#ffcc00","#66ccff","#ff99cc","#66ff66"];
+        balloon.style.background = colors[Math.floor(Math.random()*colors.length)];
+
+        // Randomize horizontal position
+        balloon.style.left = Math.random()*window.innerWidth + "px";
+
+        // Randomize size
+        let size = 40 + Math.random()*40;
+        balloon.style.width = size + "px";
+        balloon.style.height = (size*1.3) + "px";
+
+        document.body.appendChild(balloon);
+        setTimeout(()=>balloon.remove(),6000);
+      }, 500);
+
+      // Show surprise message
+      setTimeout(()=>{
+        document.getElementById("message").style.display = "block";
+      }, 1000);
+
+      // Show card after message
+      setTimeout(()=>{
+        let card = document.getElementById("card");
+        card.style.display = "flex";
+        card.style.opacity = "1"; // fade-in effect
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
